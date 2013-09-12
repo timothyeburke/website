@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fizz Buzz Test</title>
+		<style type="text/css">
+			body {
+				font-family: Helvetica, Verdana, Arial, sans-serif;
+				text-align: center;
+				padding: 20px;
+			}
+			#output {
+				background-color: #e2e2ff;
+				width: 500px;
+				margin: 0px auto;
+				padding: 20px;
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		<script type="text/javascript">
+			(function () {
+				var output = '<h1>Fizz Buzz Test</h1>';
+				for(var i = 1; i < 101; i++) {
+					if(i % 5 == 0 && i % 3 == 0) {
+						output += '<br />FizzBuzz';
+					} else if (i % 3 == 0) {
+						output += '<br />Fizz';
+					} else if (i % 5 == 0) {
+						output += '<br />Buzz';
+					} else {
+						output += '<br />' + i
+					}
+					document.getElementById('output').innerHTML = output;
+				}
+			})();
+		</script>
+	</body>
+</html>

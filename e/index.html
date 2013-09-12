@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Etsy Twitter Stream</title>
+		<script src="jquery-1.8.2.min.js"></script>
+		<script src="etsy.js">
+		</script>
+		<style type="text/css">
+			body {
+				font-family: Arial, Helvetica, Sans-serif;
+			}
+			.row_entry {
+				display: none;
+			}
+			#tweets {
+				width: 700px;
+				margin: 0px auto;
+				padding: 20px;
+				background-color: #EEE;
+			}
+			#loading {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="scripts"></div>
+		<div id="tweets">
+			<span id="loading">Hang on... I'm a little slow loading data.</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello World!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            html {
+                overflow: -moz-scrollbars-vertical;
+                overflow-y: scroll;
+            }
+
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+                background-image: url('img/background.jpeg')
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .projectImageLeft {
+                float: left;
+                padding: 20px;
+            }
+
+            .projectImageLeft img {
+                width: 100px;
+                height: 100px;
+                border-radius: 20px;
+                box-shadow: 1px 1px 2px #999;
+            }
+
+            .cellpadding {
+                padding: 10px;
+            }
+
+            .top {
+                display: table-cell; 
+                vertical-align:top;
+            }
+
+            .right {
+                text-align: right;
+            }
+        </style>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="home">Tim Burke</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="home">Home</a></li>
+                            <!-- <li><a href="about">About Me</a></li> -->
+                            <li><a href="resume">R&#233;sum&#233;</a></li>
+                            <li><a href="coursework">Coursework</a></li>
+                            <li><a href="projects">Projects</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                        <div class="pull-right" style="padding: 9px 5px 0px 10px;">
+                            <a href="https://twitter.com/cs_tim" class="twitter-follow-button" data-show-count="false">
+                                Follow @cs_tim
+                            </a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                            </script>
+                        </div>
+                        <div class="pull-right" style="padding: 9px 10px 0px 0px;">
+                            <a href="http://www.linkedin.com/in/tburke2" style="text-decoration:none;" target="_blank">
+                                <span style="font: 90% Arial,sans-serif; color:#0783B6;">
+                                    <img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Tim Burke's LinkedIn profile" style="vertical-align:middle" />View my profile
+                                </span>
+                            </a>
+                        </div>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="main">
+        </div>
+
+        <div class="container hidden" id="home">
+            <div class="hero-unit span6" style="background-color: white;">
+                <h1>Hi there!</h1>
+                <p>
+                    I'm Tim and <!-- I am a recent graduate with a Bachelor of Science in
+                    Computer Science from the <a href="http://www.umbc.edu">University of
+                    Maryland, Baltimore County (UMBC)</a>. --> I work for a small software company
+                    called <a href="http://www.ringtaildesign.com">Ringtail Design</a> where I
+                    focus on creating great software user experiences through thoughtful user 
+                    interface and interaction design, plus some cool code.  Previously, I was
+                    a full-time software engineer and three-time summer intern with the 
+                    <a href="http://www.jhuapl.edu/">Johns Hopkins University Applied Physics
+                    Laboratory</a>. I have also spent time tutoring less experienced computer 
+                    science students at the <a href="http://www.cs.umbc.edu/~cshc/">UMBC Computer
+                    Science Help Center</a>, and would one day like to teach college-level
+                    computer science.
+                </p>
+                <p>
+                    My areas of interest include <!-- mobile application and --> user interface
+                    development, web development, data visualization, human computer
+                    interaction (HCI), user experience analysis and improvement,
+                    accessibility technologies, <a href="http://en.wikipedia.org/wiki/Kitten">
+                    kittens</a>, and learning new programming languages.
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                    There really is no place like <a href="http://en.wikipedia.org/wiki/Localhost">::1</a>
+                </p>
+            </div>
+
+            <div class="well well-large span3" style="background-color: white; padding-left: 40px;">
+                    <h3>Bio</h3>
+                    <img src="img/tim2.jpg" alt="Tim" />
+                    <p>
+                        Tim <!-- is a User Experience developer with <a href="http://www.ringtaildesign.com">
+                        Ringtail Design</a>, and --> lives in Arlington, VA.  He enjoys making software and systems
+                        more usable, expressing ideas with verbosity, exploring cities on foot, and posing 
+                        for pictures with other people's pets.
+                    </p>
+                    <!-- <p>
+                        <a href="about">Read more...</a>
+                    </p> -->
+
+                </div>
+        </div>
+
+        <div class="container hidden" id="about">
+            <div class="row-fluid">
+                <div class="well well-large span12" style="background-color: white;">
+                    <h2>About Me</h2>
+                    <span style="font-size: 120%;">
+                        Oh hey... you're the lady from the test. Hi!
+                        <br /><br />
+                        This section is coming soon.  Yeah, yeah, I know.  It's almost
+                        as bad as one of those 90s "Under Construction" images.  
+                        <br /><br />
+                        To make up for it,
+                        here is a picture of a kitten:
+                        <br /><br /><br />
+                    </span>
+                    <img src="img/kitten.jpg" alt="A kitten!" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container hidden" id="resume">
+            <div class="row-fluid">
+                <div class="well well-large span12" style="background-color: white;">
+                    <!-- <a href="./resume.pdf">Download as PDF.</a> -->
+                    <table style="font-size: 130%; width: 100%; border-spacing: 10px;">
+                        <tr>
+                            <td colspan="2" class="cellpadding"><h2>Timothy E. Burke</h2></td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Summary</span></td>
+                            <td class="cellpadding">
+                                <!-- Recent graduate with a Bachelor of Science in Computer. --> Currently exploring the User Experience and Data Visualization domains of Computer Science as a User Experience Developer with Ringtail Design, and formerly as a Software Engineer and Software Engineer Intern with the Johns Hopkins University Applied Physics Laboratory. Experience developing and updating desktop tools, web applications, and database systems. Interests include big data analytics, web/mobile application development, human computer interaction, user experience design, and data visualization.
+                            </td>
+                        </tr>
+                        <!-- Grad-school is temporarily suspended while I figure out
+                             what I want to be when I grow up and/or change the world.
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Education</span></td>
+                            <td class="cellpadding">
+                                <b>M.S. Computer Science, University of Maryland, Baltimore County</b><br />
+                                4.0 GPA, Incomplete<br />
+                                Coursework: Data Visualization, Research Methods for Computer Science, Distributed Systems.
+
+                            </td>
+                        </tr> 
+                        -->
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">&nbsp;</span></td>
+                            <td class="cellpadding">
+                                <b>B.S. Computer Science, University of Maryland, Baltimore County</b><br />
+                                3.48 GPA, Completed January 2012<br />
+                                Coursework: Database Systems, Mobile Platform Development (iOS), Artificial Intelligence, with graduate-level Data Visualization, Research Methods for Computer Science, and Distributed Systems. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Professional Experience</span></td>
+                            <td class="cellpadding">
+                                <b>Ringtail Design</b><br />
+                                User Experience Developer, January 2013 - Present<br />
+                                <br />
+                                I make cool stuff for touchscreens.  
+                                <br />
+                                <br />
+                                <b>Johns Hopkins University Applied Physics Laboratory</b><br />
+                                Software Engineer, February 2012 - January 2013<br />
+                                Software Engineer Intern,  June 2009 - February 2012 (FT Summers, PT during semesters)<br />
+                                <br />
+                                Function as UI developer and release manager for new department and enterprise web applications using 
+                                C#, ASP.NET, .NET MVC, HTML, CSS, JavaScript, jQuery, and jQuery UI. Serve as a member of the Enterprise 
+                                IT Department’s User Experience team.  Create user-interface mockups and functional prototypes, incorporating 
+                                user and management feedback. Mentor two interns during the summer of 2012.  Serve as Outreach Coordinator for 
+                                APL’s LGBT employee group, <i>Allies in the Workplace</i>.  Attend outside recruiting events in support of the 
+                                laboratory college recruiting office. <br />
+                                <br />
+                                <b>University of Maryland, Baltimore County</b><br />
+                                Computer Science Help Center Tutor, September 2011 - December 2011<br />
+                                <br />
+                                Assist students with theory, programming concepts, and syntax issues for introductory and intermediate computer 
+                                science courses. Specifically, provided help with Introduction to Computer Science in C, Computer Science I/II 
+                                for Majors in Python and Java, Data Structures in Java, Computer Organization in C and X86 Assembly, and Principles 
+                                of Programming Languages in C, LISP/Scheme, Perl, and Python.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Skills</span></td>
+                            <td class="cellpadding">
+                                <b>Languages:</b>  C, C++, Objective-C, C#,  Java, HTML/CSS,  JavaScript, Python, SQL, LISP.<br />
+                                <b>Libraries/APIs:</b>  jQuery/jQuery UI, iOS SDK 4, ASP.NET/ASP.NET MVC.<br />
+                                <b>IDEs:</b> Visual Studio, Xcode, Eclipse, NetBeans, Nano.<br />
+                                <b>Databases:</b>  Microsoft SQL / SQL Server Management Studio, Oracle 10g / SQL Developer.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Honors and Awards</span></td>
+                            <td class="cellpadding">
+                                <ul>
+                                    <li>APL Special Achievement Award recipient for outstanding work on a successful product release.</li>
+                                    <li>Recipient of the Computer Science Student Leadership Award for the 2012 graduating class of the College of Engineering &amp; Information Technology.</li>
+                                    <li>UMBC Center for Women in Technology (CWIT) scholarship recipient.</li>
+                                    <li>Department of Computer Science and Electrical Engineering Promotion and Tenure Committee Undergraduate Teaching Evaluator (2010 - 2011 academic year).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Training and Conferences</span></td>
+                            <td class="cellpadding">
+                                <ul>
+                                    <li>Attended VALiO 2013 design conference in San Diego, CA.</li>
+                                    <li>Attended the ACM SIGCHI (Special Interest Group on Computer-Human Interaction) annual conference in May 2012 in Austin, TX.</li>
+                                    <li>Attended the Out for Work National Conference for Lesbian, Gay, Bisexual, Transgender, and Ally college students in October 2010 and 2011 in Washington DC.</li>
+                                    <li>Introduction to Hadoop for Developers (UMBC Training Centers) September 2012.</li>
+                                    <li>Building Applications with ASP.NET MVC (Learning Tree International) in May 2012.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="cellpadding top"><span style="font-size: 110%; font-weight: bold;">Fun School Project</span></td>
+                            <td class="cellpadding">
+                                <b>Mastermind Game Player Agent, Introduction to Artificial Intelligence</b><br />
+                                As part of a two-person team, design a reasoning agent to play the game Mastermind. 
+                                Implemented by creating a genetic algorithm to mutate possible peg and color combinations; 
+                                applying constraints to the rate of mutation from generation to generation based on feedback 
+                                from the gamekeeper. Additionally, successive pruning of the color search space for each peg 
+                                based on feedback from the gamekeeper further restricted the number of guesses necessary to 
+                                reason the final answer.
+                            </td>
+                        </tr> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container hidden" id="coursework">
+            <div class="row-fluid">
+                <div class="well well-large span12" style="background-color: white;">
+                    <h2>Coursework</h2>
+                    <!-- 
+                        YES!  A table.  Why?  Tables are still useful for
+                        displaying tabular data, like the data I am displaying
+                        here.  Don't be all judgy.  
+                    -->
+                    <table class="table">
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                <h4>University of Maryland, Baltimore County: Master of Science, Computer Science (Incomplete)</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                Graduate Computer Science Electives
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CMSC636</td>
+                            <td>A</td>
+                            <td>Data Visualization **</td>
+                            <td><a href="http://www.csee.umbc.edu/~rheingan/">Dr. Penny Rheingans</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC601</td>
+                            <td>A</td>
+                            <td>Research Methods for Computer Science **</td>
+                            <td><a href="http://www.csee.umbc.edu/~finin/">Dr. Tim Finin</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                <br>Graduate Computer Science Core
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CMSC621</td>
+                            <td>A</td>
+                            <td>Advanced Operating Systems</td>
+                            <td><a href="http://www.csee.umbc.edu/~kalpakis/">Dr. Kostas Kalpakis</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                <br /><h4>University of Maryland, Baltimore County: Bachelor of Science, Computer Science</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                Undergraduate Computer Science Electives
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CMSC636</td>
+                            <td>A</td>
+                            <td>Data Visualization *</td>
+                            <td><a href="http://www.csee.umbc.edu/~rheingan/">Dr. Penny Rheingans</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC601</td>
+                            <td>A</td>
+                            <td>Research Methods for Computer Science *</td>
+                            <td><a href="http://www.csee.umbc.edu/~finin/">Dr. Tim Finin</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC498</td>
+                            <td>P</td>
+                            <td>Independent Study in Computer Science for Interns and Co-op Students</td>
+                            <td><a href="http://www.csee.umbc.edu/~mariedj/">Dr. Marie desJardins</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC491</td>
+                            <td>A</td>
+                            <td>Special Topics in Computer Science: Mobile Platform Development</td>
+                            <td><a href="http://userpages.umbc.edu/~dhood2/">Dan Hood</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC471</td>
+                            <td>B</td>
+                            <td>Introduction to Artificial Intelligence</td>
+                            <td><a href="http://www.csee.umbc.edu/people/faculty/tim-oates/">Dr. Tim Oates</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC461</td>
+                            <td>B</td>
+                            <td>Database Management Systems</td>
+                            <td><a href="http://www.csee.umbc.edu/~kalpakis/">Dr. Kostas Kalpakis</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold; border: 0px solid black;">
+                                <br>Undergraduate Computer Science Core
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CMSC441</td>
+                            <td>B</td>
+                            <td>Design and Analysis of Algorithms</td>
+                            <td><a href="http://www.csee.umbc.edu/~chang/">Dr. Richard Chang</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC421</td>
+                            <td>A</td>
+                            <td>Principles of Operating Systems</td>
+                            <td><a href="http://www.csee.umbc.edu/people/faculty/yelena-yesha/">Dr. Yelena Yesha</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC411</td>
+                            <td>B</td>
+                            <td>Computer Architecture</td>
+                            <td><a href="http://www.csee.umbc.edu/~squire/">Dr. Jon Squire</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC345</td>
+                            <td>A</td>
+                            <td>Software Design and Development</td>
+                            <td><a href="http://www.csee.umbc.edu/~smitchel/">Dr. Susan Mitchell</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC341</td>
+                            <td>B</td>
+                            <td>Data Structures and Algorithm Analysis</td>
+                            <td>Mitch Edelman</td>
+                        </tr>
+                        <tr>
+                            <td>CMSC331</td>
+                            <td>A</td>
+                            <td>Principles of Programming Languages</td>
+                            <td><a href="http://www.csee.umbc.edu/people/faculty/charles-nicholas/">Dr. Charles Nicholas</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC313</td>
+                            <td>A</td>
+                            <td>Assembly Language and Computer Organization</td>
+                            <td><a href="http://www.csee.umbc.edu/~frey/">Dennis Frey</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC304</td>
+                            <td>A</td>
+                            <td>Social And Ethical Issues In Information Technology</td>
+                            <td><a href="http://userpages.umbc.edu/~rwilso4/">Richard Wilson</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC203</td>
+                            <td>B</td>
+                            <td>Discrete Mathematics</td>
+                            <td><a href="http://www.csee.umbc.edu/~artola/">Paul Artola</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC202</td>
+                            <td>A</td>
+                            <td>Computer Science II for Majors</td>
+                            <td><a href="http://www.csee.umbc.edu/shawn-lupoli/">Shawn Lupoli</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC201</td>
+                            <td>A</td>
+                            <td>Computer Science I for Majors</td>
+                            <td><a href="http://www.csee.umbc.edu/shawn-lupoli/">Shawn Lupoli</a></td>
+                        </tr>
+                    </table>
+                    &nbsp;*&nbsp;Graduate course taken for undergraduate credit<br />
+                         **&nbsp;Course cross counted towards both degrees
+                </div>
+            </div>
+        </div>
+
+        <div class="container hidden" id="projects">
+            <div class="row-fluid">
+                <div class="well well-large span12" style="background-color: white;">
+                    <!-- <h2>Personal Musings</h2>
+
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="" alt="" />
+                        </div>
+                        <h4>Foo.</h4>
+                        <p>
+                            DIY viral pour-over, Terry Richardson tofu single-origin coffee authentic farm-to-table twee hashtag wolf kitsch brunch chambray. Odd Future fingerstache craft beer Neutra High Life next level irony 3 wolf moon, sustainable art party. Odd Future blue bottle Pinterest, quinoa retro pug bespoke mlkshk selvage leggings. Actually seitan pour-over fap lo-fi small batch. Ugh flexitarian Neutra gluten-free, blue bottle keffiyeh High Life gentrify cred chambray. Tousled bespoke yr, cliche Portland typewriter kogi retro kale chips sartorial. Tattooed wayfarers intelligentsia pork belly Cosby sweater.
+                        </p>
+                    </div>
+
+                    <h2>Professional Projects</h2> -->
+
+                    <h2>Academic Projects</h2>
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/file.png" alt="Color Graph" />
+                        </div>
+                        <h4>
+                            Paper: Generalized Automatic Color Selection for Visualization
+                        </h4>
+                        <h5>
+                            CMSC636 - Data Visualization
+                        </h5>
+                        <p>
+                            Abstract: Creating a perceptually distinct coloring for
+                            visualizing large data sets with one or more related properties can
+                            be difficult, even for a domain expert. To aid in the color selection
+                            process, we present a method for selecting an optimized coloring for
+                            these data sets by applying a force-directed algorithm. The method we
+                            have implemented selects hue values using a constraint graph derived
+                            from relationships within the data. This optimal set of hues can then
+                            be converted to colors using any color space and used to color the
+                            data points in a visualization. This method is demonstrated through a
+                            geographical domain problem involving school districts, specifically
+                            depicting elementary to middle to high school feeder patterns.
+                            Further, the method is applied to two different sets of constraints
+                            for creating visualizations of directory structures: file size
+                            relationship constraints and dominant file type
+                            constraints.
+                        </p>
+                        <a href="./color.pdf">Download paper.</a>
+                    </div>
+                    <hr />
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/markingmenu.jpg" alt="Marking Menu" />
+                        </div>
+                        <h4>
+                            Research Proposal: Radial Marking Menu Performance Improvement and User Type Detection
+                        </h4>
+                        <h5>
+                            CMSC601 - Research Methods for Computer Science
+                        </h5>
+                        <p>
+                            Abstract: Menus in graphical user interfaces have existed for over
+                            two decades and have largely been variations on the linear drop-down
+                            menu paradigm. In many operating systems and software packages, menus
+                            are unchanging and non-adaptive, forcing users to memorize menu
+                            command layouts in order to find desired commands. Research has been
+                            conducted to allow menu systems to become adaptive to single users
+                            over time or to dynamically detect a user's
+                            expertise level in order to reorganize or alter the display of menus
+                            to improve command selection and execution time. More recently,
+                            devices utilizing touch-screen, multi-touch, and pen-based input have
+                            gained popularity, yet the linear menu paradigm, which is not as well
+                            suited for those input modalities, has persisted. An alternate menu
+                            paradigm, radial marking menus, has emerged as one possible
+                            alternative to the linear menu for touch and pen-based input devices.
+                            The purpose of this study is to explore two previous methods for
+                            improving performance (command selection and execution time) of
+                            linear menus and adapting those methods to radial marking menus.
+                            Specifically, exploring one method for adapting to a single user over
+                            time, and another utilizing machine learning techniques to
+                            dynamically detect a user's level of expertise.
+                        </p>
+                        <a href="./7-3.pdf">Download proposal.</a>
+                    </div>
+                    <hr />
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/chi.png" alt="CHI 2010" />
+                        </div>
+                        <h4>
+                            iOS Conference Program App
+                        </h4>
+                        <h5>
+                            CMSC491 - Special Topics in Computer Science: 
+                            Mobile Platform Development
+                        </h5>
+                        <p>
+                            As part of a two-person team, design an iPhone/iPod Touch app that
+                            provides an interactive, green alternative to paper conference
+                            guides. Information on all presentations, performances, speakers and
+                            sponsors is included in a searchable application. Events, speakers,
+                            and sponsors of interest can be marked favorite for later
+                            exploration. A map of the various venues for the conference is
+                            included, with annotations to help find the venue for presentations
+                            quickly and easily.
+                        </p>
+                        <a href="http://userpages.umbc.edu/~dhood2/courses/cmsc491i/fall2010/final-projects/projects/aci1-tburke2/">
+                            Detailed project description.
+                        </a>
+                    </div>
+                    <hr />
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/mastermind.png" alt="Mastermind" />
+                        </div>
+                        <h4>
+                            Mastermind Game Player Agent
+                        </h4>
+                        <h5>
+                            CMSC471 - Introduction to Artificial Intelligence
+                        </h5>
+                        <p>
+                            As part of a two-person team, design a reasoning agent to play the game 
+                            Mastermind. Implemented by creating a genetic algorithm, mutating possible 
+                            peg and color combinations, and applying constraints to the degree of 
+                            mutation from generation to generation based on feedback from the 
+                            gamekeeper. Additionally, successive pruning of the color search space for 
+                            each peg based on feedback from the gamekeeper further restricted the 
+                            number of guesses necessary to reason the final answer.
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/scheduler.jpg" alt="Planning Tool" />
+                        </div>
+                        <h4>
+                            Class Planning Tool
+                        </h4>
+                        <h5>
+                            CMSC345 - Software Design and Development
+                        </h5>
+                        <p>
+                            Serve as the team lead and facilitator for a project team of four
+                            students to develop a product that allows students to plan potential
+                            schedule paths from any point in the undergraduate career to the
+                            student's graduation by following major and minor prerequisites,
+                            cross-major class equivalencies, and general education
+                            requirements. Contribute to the production of all necessary software
+                            engineering documentation, including software requirements, system
+                            design documentation, user-interface design, code inspection, testing
+                            reports, delivery documentation, and customer administrator
+                            documentation.
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="projectSpan">
+                        <div class="projectImageLeft">
+                            <img src="img/tictactoe.png" alt="Tic-Tac-Toe" />
+                        </div>
+                        <h4>
+                            Learning Tic-Tac-Toe Game Agent
+                        </h4>
+                        <h5>
+                            CMSC341 - Data Structures and Algorithm Analysis
+                        </h5>
+                        <p>
+                            Design and implement, without imparting any previously known
+                            strategy, a learning Tic-Tac-Toe rational agent and decision-making
+                            algorithm that improves in performance after each game played.
+                            Achieved a noticeable improvement in win ratio against a
+                            "dumb random" agent after 500 games, and which achieves a near
+                            human-level proficiency of 85-90% win and 5-7% draw rate after
+                            approximately 11,000 games played against the same random agent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container hidden" id="contact">
+            <div class="row-fluid">
+                <div class="well well-large span12" style="background-color: white;">
+                    <h2>Contact Me</h2>
+                    <table style="font-size: 1.3em; border-spacing: 10px;">
+                        <tr>
+                            <td class="cellpadding right" style="width: 100px;">mobile:</td>
+                            <td class="cellpadding">PHONENUMBER</td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding right">email:</td>
+                            <td class="cellpadding"><a href="mailto:EMAILADDR">EMAILADDR</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding right">Linkedin:</td>
+                            <td class="cellpadding"><a href="http://www.linkedin.com/in/tburke2">http://www.linkedin.com/in/tburke2</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cellpadding right">twitter:</td>
+                            <td class="cellpadding"><a href="http://twitter.com/cs_tim">@cs_tim</a></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            // Googley stuff
+            var _gaq = _gaq || [];
+            if(document.URL.indexOf("timothyburke.us") >= 0) {
+                _gaq.push(['_setAccount', 'UA-25870009-1']);
+            } else {
+                _gaq.push(['_setAccount', 'UA-25870009-2']);
+            }
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            // End Googley stuff
+
+            var $main;
+
+            function email() {
+                var _0x9ece=["\x74\x69\x6D\x6F\x74\x68\x79","\x2E","\x65","\x62\x75\x72\x6B\x65","\x40","\x67\x6D\x61\x69\x6C","\x63\x6F\x6D"];
+                return _0x9ece[0]+_0x9ece[1]+_0x9ece[2]+_0x9ece[1]+_0x9ece[3]+_0x9ece[4]+_0x9ece[5]+_0x9ece[1]+_0x9ece[6];
+            }
+
+            function phone() {
+                var _0x9eca=["\x32\x30\x32","\x2D","\x35\x39\x36","\x36\x30\x38\x30"];
+                return _0x9eca[0]+_0x9eca[1]+_0x9eca[2]+_0x9eca[1]+_0x9eca[3];
+            }
+
+            function click(e) {
+                var href = $(this).attr('href');
+                if (href.indexOf('/') == -1 && href.indexOf('mailto:')) {
+                    e.preventDefault();
+                    var same = false;
+                    $(".nav-collapse").find('li').each(function () {
+                        var $this = $(this);
+                        var thisHref = $this.find('a').first().attr('href');
+                        if ($this.hasClass("active") && thisHref == href) {
+                            same = true;
+                        }
+                        $this.removeClass("active");
+                        if (thisHref == href) {
+                            $this.addClass("active");
+                        }
+                    });
+                    if (!same) {
+                        $main.fadeOut(300, function () {
+                            var html = $("#" + href).html();
+                            html = html.replace(/EMAILADDR/g, email());
+                            html = html.replace(/PHONENUMBER/g, phone());
+                            $main.html(html);
+                            $main.fadeIn(200);
+                        });
+                    }
+                }
+            }
+
+            function blank() {
+                var $this = $(this);
+                var href = $this.attr('href');
+                if(href != undefined) {
+                    if(href.indexOf('mailto') == -1) {
+                        $this.attr("target", "_blank");
+                    }
+                }
+            }
+
+            $(function () {
+                $main = $("#main");
+                $main.html($("#home").html());
+                $('a').each(blank); 
+                $('body').on('click', 'a', click);
+            });
+        </script>
+    </body>
+</html>
