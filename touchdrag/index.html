@@ -37,10 +37,14 @@
 	<script type="text/javascript">
 		var $body;
 		var $debug;
-		var isMouseDown = false;
+		var isMouseDown   = false;
+		var updateInterval = 0;
+		var t;
+		var left;
 
-		var updatePosition = function ($div, e) {
-			$div.css('top', (e.pageY) - 20 + 'px').css('left', (e.pageX - 10) + 'px');
+		var updatePosition = function (e) {
+			t  = (e.pageY - 20) + 'px';
+			left = (e.pageX - 10) + 'px';
 		};
 
 		var setupEvents = function () {
@@ -48,18 +52,23 @@
 			.on('mousedown', function (e) {
 				isMouseDown = true;
 				$one.show();
-				updatePosition($one, e);
+				updatePosition(e);
 			})
 			.on('mousemove', function (e) {
-				if(isMouseDown) {
-					console.log('ran');
-					updatePosition($one, e);
-				}
+				updatePosition(e);
 			})
 			.on('mouseup', function (e) {
 				isMouseDown = false;
 				$one.hide();
 			});
+		};
+
+		var setupRender = function () {
+			updateInterval = setInterval(function () {
+				if (isMouseDown) {
+					$one.css('top', t).css('left', left);
+				}
+			}, 30);
 		}
 
 		$(function () {
@@ -67,6 +76,7 @@
 			$one = $('#one');
 
 			setupEvents();
+			setupRender();
 		});
 	</script>
 </html>
