@@ -51,43 +51,79 @@
 			}
 			/* END CSS RESET */
 
+			body {
+				font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+			}
+
 			header {
 				position: fixed;
 				top: 0px;
 				right: 0px;
 				left: 0px;
-				padding: 30px;
-				background-color: green;
-				font-size: 6em;
-				color: white;
+				background-color: #55f;
 				z-index: 10;
 			}
 
-			#top {
-				margin: 0px;
+			h1 {
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+
+			.combined {
+				text-align: center;
 				padding: 30px;
-				background-color: red;
 				font-size: 6em;
 				color: white;
+				margin-right: 20px;
+				margin-left: 20px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+
+			#hidden {
+				background-color: red;
 				z-index: 5;
 			}
 
-			div {
+			#pushed-down-content {
 				padding: 20px;
+				font-size: 2.5em;
 			}
 		</style>
 	</head>
 	<body>
-		<header>
-			This is the header row.  It may wrap.
+		<header class="combined">
+			This is the fixed header bar.  It will wrap.
 		</header>
-		<div id="top">
+		<div id="hidden" class="combined">
 			<!-- This div will be hidden -->
-			This is the header row.  It may wrap.
+			This is the fixed header bar.  It will wrap.
 		</div>
-		<div>
+		<div id="pushed-down-content">
 			<!-- Page content goes here -->
-			Hi there!
+			<h1>Hi there!</h1>
+			<p>&nbsp;</p>
+			<p>
+				The page content goes here.  This page content will be pushed
+				down as the header row gets taller when the text wraps.  This
+				is accomplished without any JavaScript height measurement.  If 
+				you adjust the width of your browser window, the text will wrap
+				in and the heaer row will get taller or shorter.  Using a numberic
+				margin or position for the page content can result in the content
+				being covered by the fixed header bar.  
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				To achieve a HTML/CSS-only workaround, place an exact copy of
+				the header bar underneath of it, but not fixed.  That includes
+				the same height, padding, margin, etc., and most importantly
+				the same text.  This way, as the width of the page varies, 
+				resulting in different heights for the fixed header bar, the 
+				hidden div behind it will adjust to the same height, pushing
+				the content down.  When the page is narrow enough to scroll,
+				the content will scroll under the header bar, and will always
+				be adjusted down far enough when scrolled to the top.
+			</p>
 		</div>
 	</body>
 </html>
