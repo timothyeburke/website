@@ -1,0 +1,168 @@
+{
+    "home": {
+        "greeting": "Hi there!",
+        "introduction": [
+            "I'm Tim and I work for a small software company called <a href='http://www.ringtaildesign.com'>Ringtail Design</a> where I focus on creating great software user experiences through thoughtful user interface and interaction design, plus some cool code.  Previously, I was a full-time software engineer and three-time summer intern with the <a href='http://www.jhuapl.edu/'>Johns Hopkins University Applied Physics Laboratory</a>. I have also spent time tutoring less experienced computer science students at the <a href='http://www.cs.umbc.edu/~cshc/'>UMBC Computer Science Help Center</a>, and would one day like to teach college-level computer science.",
+            "My areas of interest include user interface development, web development, data visualization, human computer interaction (HCI), user experience analysis and improvement, accessibility technologies, <a href='http://en.wikipedia.org/wiki/Kitten'> kittens</a>, and learning new programming languages.",
+            "&nbsp;",
+            "There really is no place like <a href='http://en.wikipedia.org/wiki/Localhost'>::1</a>"
+        ],
+        "bio": {
+            "image": "img/tim2.jpg",
+            "blurb": [
+                "Tim lives in Arlington, VA.  He enjoys making software and systems more usable, expressing ideas with verbosity, exploring cities on foot, and posing for pictures with other people's pets."
+            ]
+        },
+    },
+    "resume": {
+        "heading": "Timothy E. Burke",
+        "summary": [
+            "Currently exploring the User Experience and Data Visualization domains of Computer Science as a User Experience Developer with Ringtail Design, and formerly as a Software Engineer and Software Engineer Intern with the Johns Hopkins University Applied Physics Laboratory. Experience developing and updating desktop tools, web applications, and database systems. Interests include big data analytics, web/mobile application development, human computer interaction, user experience design, and data visualization."
+        ],
+        "schools": [
+            {
+                "degree_short": "B.S.",
+                "degree_long": "Bachelor of Science",
+                "major": "Computer Science",
+                "school": "University of Maryland, Baltimore County",
+                "gpa": 3.48,
+                "completed": "2012-1-22",
+                "coursework_summary": "Database Systems, Mobile Platform Development (iOS), Artificial Intelligence, with graduate-level Data Visualization, Research Methods for Computer Science, and Distributed Systems.",
+                "coursework": [
+                    {
+                        "code": "CMSC201",
+                        "description": "Computer Science I for Majors",
+                        "grade": "A",
+                        "instructor": "Shawn Lupoli",
+                        "instructor_link": "http://www.csee.umbc.edu/shawn-lupoli/",
+                        "type": "core"
+                    },
+                    {
+                        "code": "CMSC202",
+                        "description": "Computer Science II for Majors",
+                        "grade": "A",
+                        "instructor": "Shawn Lupoli",
+                        "instructor_link": "http://www.csee.umbc.edu/shawn-lupoli/",
+                        "type": "core"
+                    },
+                    {
+                        "code": "CMSC203",
+                        "description": "Discrete Mathematics",
+                        "grade": "B",
+                        "instructor": "Paul Artola",
+                        "instructor_link": "http://www.csee.umbc.edu/~artola/",
+                        "type": "core"
+                    },
+                    {
+                        "code": "CMSC304",
+                        "description": "Social And Ethical Issues In Information Technology",
+                        "grade": "A",
+                        "instructor": "Richard Wilson",
+                        "instructor_link": "http://userpages.umbc.edu/~rwilso4/",
+                        "type": "core"
+                    }
+                ]
+            },
+            {
+                "degree_short": "M.S.",
+                "degree_long": "Master of Science",
+                "major": "Computer Science",
+                "school": "University of Maryland, Baltimore County",
+                "gpa": 4.0,
+                "completed": null,
+                "coursework": "Data Visualization, Research Methods for Computer Science, and Distributed Systems."
+            }
+        ],
+        "positions": [
+            {
+                "company": "Ringtail Design",
+                "website": "http://www.ringtaildesign.com",
+                "date_start": "2013-1-14",
+                "date_end": null,
+                "title": "User Experience Developer",
+                "summary": "I make cool stuff for touchscreens.",
+                "languages": [
+                    "JavaScript",
+                    "Java",
+                    "HTML5",
+                    "CSS3"
+                ],
+                "libraries": [
+                    "NodeJS",
+                    "AngularJS",
+                    "KnockoutJS",
+                    "UnderscoreJS",
+                    "jQuery",
+                    "Android SDK",
+                    "JBoss"
+                ],
+                "databases": [
+                    "MongoDB",
+                    "Accumulo"
+                ]
+            },
+            {
+                "company": "Johns Hopkins University Applied Physics Laboratory",
+                "website": "http://www.jhuapl.edu",
+                "date_start": "2012-2-1",
+                "date_end": "2013-1-11",
+                "title": "Software Engineer (Associate Professional Staff I)",
+                "summary": "Function as UI developer and release manager for new department and enterprise web applications using C#, ASP.NET, .NET MVC, HTML, CSS, JavaScript, jQuery, and jQuery UI. Serve as a member of the Enterprise IT Department’s User Experience team. Create user-interface mockups and functional prototypes, incorporating user and management feedback. Mentor two interns during the summer of 2012. Serve as Outreach Coordinator for APL’s LGBT employee group, <i>Allies in the Workplace</i>. Attend outside recruiting events in support of the laboratory college recruiting office.",
+                "languages": [
+                    "C#",
+                    "JavaScript",
+                    "VBA",
+                    "HTML", 
+                    "CSS"
+                ],
+                "libraries": [
+                    "ASP.NET",
+                    ".NET MVC",
+                    "jQuery",
+                    "jQuery UI"
+                ],
+                "databases": [
+                    "Microsoft SQL Server 2012",
+                    "Microsoft SQL Server 2008",
+                    "Oracle 10g"
+                ]
+            },
+            {
+                "company": "Johns Hopkins University Applied Physics Laboratory",
+                "website": "http://www.jhuapl.edu",
+                "date_start": "2009-6-1",
+                "date_end": "2012-1-31",
+                "title": "Software Engineer Intern",
+                "summary": "",
+                "languages": [
+                    "C#",
+                    "JavaScript",
+                    "VB.NET",
+                    "VBA",
+                    "HTML", 
+                    "CSS"
+                ],
+                "libraries": [
+                    "ASP.NET",
+                    "jQuery"
+                ],
+                "databases": [
+                    "Microsoft SQL Server 2008"
+                ]
+            }
+        ],
+        "honors": [
+            "APL Special Achievement Award recipient for outstanding work on a successful product release.",
+            "Recipient of the Computer Science Student Leadership Award for the 2012 graduating class of the College of Engineering & Information Technology.",
+            "UMBC Center for Women in Technology (CWIT) scholarship recipient.",
+            "Department of Computer Science and Electrical Engineering Promotion and Tenure Committee Undergraduate Teaching Evaluator (2010 - 2011 academic year)."
+        ],
+        "training": [
+            "Attended VALiO 2013 design conference in San Diego, CA.",
+            "Attended the ACM SIGCHI (Special Interest Group on Computer-Human Interaction) annual conference in May 2012 in Austin, TX.",
+            "Attended the Out for Work National Conference for Lesbian, Gay, Bisexual, Transgender, and Ally college students in October 2010 and 2011 in Washington DC.",
+            "Introduction to Hadoop for Developers (UMBC Training Centers) September 2012.",
+            "Building Applications with ASP.NET MVC (Learning Tree International) in May 2012."
+        ]
+    }
+}
