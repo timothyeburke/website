@@ -226,4 +226,8 @@ var CrimeStats = (function() {
 			updateHistogramsThenMap();
 		});
 	}
+
+	return {
+		initialize: initialize
+	}
 })();
