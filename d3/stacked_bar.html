@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="jquery-2.1.0.min.js"></script>
+		<script src="underscore-min.js"></script>
+		<script src="d3.v3.min.js"></script>
+		<style>
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			#viz {
+				position: absolute;
+				top: 100px;
+				right: 100px;
+				bottom: 100px;
+				left: 100px;
+				/*border: 1px solid black;*/
+
+				-moz-transform: scaleY(-1);
+			    -webkit-transform: scaleY(-1);
+			    -o-transform: scaleY(-1);
+			    transform: scaleY(-1);
+			    -ms-filter: flipv; /*IE*/
+			    filter: flipv; /*IE*/
+			}
+
+		</style>
+		<script>
+
+			var renderChart = function (data) {
+				var $viz = $("#viz");
+				var w = $viz.width();
+				var h = $viz.height();
+	 
+				var svg = d3.select("#viz svg");
+
+				if(svg.empty()) {
+					svg = d3.select("#viz").append("svg:svg")
+						.attr("class", "chart")
+						.attr("width", w)
+						.attr("height", h)
+						.append("svg:g")
+						// .attr("transform", "translate(10,470)");
+				} else {
+					svg.attr("class", "chart")
+						.attr("width", w)
+						.attr("height", h);
+				}
+
+				x = d3.scale.ordinal().rangeRoundBands([0, w]);
+				y = d3.scale.linear().range([0, h]);
+				z = d3.scale.ordinal().range([
+						"rgb(0,0,100)", 
+						"rgb(150,100,150)", 
+						"rgb(0,200,200)", 
+						"rgb(0,0,250)",
+						"rgb(0,100,100)"
+					]);
+	 
+				var remapped =["c1","c2","c3","c4", "c5"].map(function(dat,i){
+					return data.map(function(d,ii){
+						return {x: ii, y: d[i+1] };
+					})
+				});
+
+				console.log(remapped);
+
+				var stacked = d3.layout.stack()(remapped);
+	 
+				x.domain(stacked[0].map(function(d) { return d.x; }));
+				y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
+	 
+				svg.selectAll("g.valgroup").remove();
+
+				// Add a group for each column.
+				var valgroup = svg.selectAll("g.valgroup")
+					.data(stacked)
+					.enter()
+					.append("svg:g")
+					.attr("class", "valgroup")
+					.style("fill", function(d, i) { 
+						return z(i); 
+					})
+					.style("stroke", function(d, i) { 
+						return z(i); 
+					});
+
+				// Add a rect for each date.
+				var rect = valgroup.selectAll("rect")
+					.data(function(d){
+						return d;
+					})
+					.enter()
+					.append("svg:rect")
+					.attr("x", function(d) { 
+						return x(d.x); 
+					})
+					.attr("y", function(d) { 
+						return y(d.y0);
+					})
+					.attr("height", function(d) { 
+						return y(d.y); 
+					})
+					.attr("width", x.rangeBand() - 5);
+			}
+
+			$(document).ready(function () {
+				var data = [];
+				for(var i = 0; i < 20; i++) {
+					var temp = [
+						i + 1, 
+						Math.abs(Math.round(Math.random() * 100 - i * 2)),
+						Math.abs(Math.round(Math.random() * 100 - i * 2)),
+						Math.abs(Math.round(Math.random() * 100 - i * 2)),
+						Math.abs(Math.round(Math.random() * 100 - i * 2)),
+						Math.abs(Math.round(Math.random() * 100 - i * 2))
+						// (i + 1),
+						// (i + 1),
+						// (i + 1),
+						// (i + 1)
+					];
+					data.push(temp);
+				}
+
+				renderChart(data);
+				var resizeTimeout = 0;
+				$(window).on("resize", function () {
+					clearInterval(resizeTimeout);
+					resizeTimeout = setTimeout(function() {
+						renderChart(data);	
+					}, 30);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="viz"></div>
+
+	</body>
+</html>

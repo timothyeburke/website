@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="jquery-2.1.0.min.js"></script>
+		<script src="underscore-min.js"></script>
+		<script src="d3.v3.min.js"></script>
+		<style>
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			#viz {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				bottom: 20px;
+				left: 20px;
+				/*border: 1px solid black;*/
+
+				/*-moz-transform: scaleY(-1);
+			    -webkit-transform: scaleY(-1);
+			    -o-transform: scaleY(-1);
+			    transform: scaleY(-1);
+			    -ms-filter: flipv; 
+			    filter: flipv; */
+			}
+
+			#viz svg {
+				/*border: 1px solid red;*/
+				background-color: rgb(220,220,255);
+			}
+		</style>
+		<script>
+			var guid = function () {
+				var s4 = function () {
+					return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+				};
+				return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+			}
+
+			var getRandomColor = function () {
+				return "rgb(" + 
+					Math.floor(Math.random() * 255) + "," +
+					Math.floor(Math.random() * 255) + "," +
+					Math.floor(Math.random() * 255) + ")";
+			}
+
+			var getRandomColorAlpha = function (a) {
+				if (a === undefined) {
+					a = 0.8;
+				}
+				return "rgba(" + 
+					Math.floor(Math.random() * 255) + "," +
+					Math.floor(Math.random() * 255) + "," +
+					Math.floor(Math.random() * 255) + "," +
+					a + ")";
+			}
+
+			var renderChart = function (data) {
+				var $viz = $("#viz");
+				var w = $viz.width() + 1;
+				var h = 200;
+
+				var tickWidth = w / (data.length + 1);
+
+				// get a handle on the svg element
+				var svg = d3.select("#viz svg");
+
+				// If new svg, add it
+				if(svg.empty()) {
+					svg = d3.select("#viz").append("svg:svg");
+				}
+
+				// Set height and width of svg
+				svg
+					.attr("class", "chart")
+					.attr("width", w)
+					.attr("height", h);
+
+				// DATA JOIN
+				// Join new data with old elements, if any.
+				var circles = svg.selectAll("circle")
+					.data(data, function (d, i) {
+						return d.id;
+					});
+
+				// ENTER
+				// Create new elements as needed.
+				circles
+					.enter()
+					.append("svg:circle")
+						.attr("fill", function (d, i) {
+							return getRandomColorAlpha();
+						})
+						.attr("stroke", function (d, i) {
+							return getRandomColor();
+						});
+
+				// UPDATE (includes newly added elements)
+				// Set all necessary attributes common to new and existing
+				circles
+					.transition()
+					.duration(500)
+						.attr("cx", function (d, i) {
+							return i * tickWidth + tickWidth;
+						})
+						.attr("cy", function (d, i) {
+							return h / 2;
+						})
+						.attr("r", function (d, i) {
+							return d.value;
+						})
+						.attr("stroke-width", function (d, i) {
+							return 2;
+						});
+
+				// EXIT
+				// Removes all removed data elements from svg
+				circles.exit().remove();
+			}
+
+
+			$(document).ready(function () {
+				var length = 20;
+
+				var data = [];
+
+				
+				setInterval(function () {
+					data.push({
+						value: Math.floor(Math.random() * 50),
+						id: guid()
+					});
+					if(data.length > length) {
+						data.shift();
+					}
+					renderChart(data);
+				}, 1000);
+				
+
+				
+
+				renderChart(data);
+				var resizeTimeout = 0;
+				$(window).on("resize", function () {
+					clearInterval(resizeTimeout);
+					resizeTimeout = setTimeout(function() {
+						renderChart(data);	
+					}, 30);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="viz"></div>
+	</body>
+</html>
