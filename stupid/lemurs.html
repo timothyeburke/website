@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+	<script src="jquery.js"></script>
+		<script>
+			$(document).ready(function () {
+				var $body = $("body");
+				var template = "<div class='block'><img src='lemur.png' /></div>";
+
+				var range = function (min, max) {
+					return Math.floor(Math.random() * (max - min + 1) + min);
+				};
+
+				var getHSL = function () {
+					var hue = range(0, 360);
+					var sat = range(0, 100);
+					var lig = range(30, 85);
+					return "hsl(" + hue + "," + sat + "%," + lig + "%)";
+				};
+
+				for (var i = 0; i < 1000; i+= 1) {
+					var $div = $(template);
+
+					$div.attr("style", "background-color:" + getHSL());
+					$body.append($div);
+				}
+			});
+		</script>
+		<style>
+		.block {
+			width: 129px;
+			height: 129px;
+			display: inline-block;
+			margin: 0px;
+			margin-top: -4px;
+		}
+		img {
+			border: 0;
+		}
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>
