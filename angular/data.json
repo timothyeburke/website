@@ -9,7 +9,7 @@
         ],
         "bio": {
             "image": "img/tim2.jpg",
-            "blurb": [
+            "text": [
                 "Tim lives in Arlington, VA.  He enjoys making software and systems more usable, expressing ideas with verbosity, exploring cities on foot, and posing for pictures with other people's pets."
             ]
         },
@@ -79,7 +79,7 @@
                 "website": "http://www.ringtaildesign.com",
                 "date_start": "2013-1-14",
                 "date_end": null,
-                "title": "User Experience Developer",
+                "title": "User Experience Developer, Recruiter, Furniture Assembler, Tutor, Office Goofball",
                 "summary": "I make cool stuff for touchscreens.",
                 "languages": [
                     "JavaScript",
@@ -97,6 +97,7 @@
                     "JBoss"
                 ],
                 "databases": [
+                    "MonetDB",
                     "MongoDB",
                     "Accumulo"
                 ]
