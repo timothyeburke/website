@@ -28,6 +28,9 @@ timBurkeCo.config(function($routeProvider) {
 		.when('/projects/site', {
 			templateUrl: 'templates/projects/site.html'
 		})
+		.when('/projects/facebook', {
+			templateUrl: 'templates/projects/facebook.html'
+		})
 		.when('/projects/foodtrucks', {
 			templateUrl: 'templates/projects/foodtrucks.html'
 		})
