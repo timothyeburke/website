@@ -19,41 +19,10 @@ timBurkeCo.config(function($routeProvider) {
 		.when('/work', {
 			templateUrl: 'templates/work.html'
 		})
-		.when('/projects', {
-			templateUrl: 'templates/projects/projects.html'
-		})
-		.when('/projects/mo', {
-			templateUrl: 'templates/projects/mo.html'
-		})
-		.when('/projects/site', {
-			templateUrl: 'templates/projects/site.html'
-		})
-		.when('/projects/facebook', {
-			templateUrl: 'templates/projects/facebook.html'
-		})
-		.when('/projects/foodtrucks', {
-			templateUrl: 'templates/projects/foodtrucks.html'
-		})
-		.when('/projects/stats', {
-			templateUrl: 'templates/projects/stats.html'
-		})
-		.when('/projects/replay', {
-			templateUrl: 'templates/projects/replay.html'
-		})
-		.when('/projects/rain', {
-			templateUrl: 'templates/projects/rain.html'
-		})
-		.when('/projects/ringtailhomework', {
-			templateUrl: 'templates/projects/ringtailhomework.html'
-		})
-		.when('/projects/fizzbuzz', {
-			templateUrl: 'templates/projects/fizzbuzz.html'
-		})
-		.when('/projects/annotate', {
-			templateUrl: 'templates/projects/annotate.html'
-		})
-		.when('/projects/colorblind', {
-			templateUrl: 'templates/projects/colorblind.html'
+		.when('/projects/:page?', {
+			templateUrl: function(params) {
+				return params.page ? 'templates/projects/' + params.page + '.html' : 'templates/projects/projects.html'
+			}
 		})
 		.when('/blog', {
 			templateUrl: 'templates/blog.html'
