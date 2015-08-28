@@ -1,178 +1,178 @@
 <!doctype html>
 <html>
-	<head>
-		<script src="jquery-2.1.0.min.js"></script>
-		<script src="underscore-min.js"></script>
-		<script src="d3.v3.min.js"></script>
-		<style>
-			html, body, div, span, applet, object, iframe,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-			a, abbr, acronym, address, big, cite, code,
-			del, dfn, em, img, ins, kbd, q, s, samp,
-			small, strike, strong, sub, sup, tt, var,
-			b, u, i, center,
-			dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend,
-			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed, 
-			figure, figcaption, footer, header, hgroup, 
-			menu, nav, output, ruby, section, summary,
-			time, mark, audio, video {
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-size: 100%;
-				font: inherit;
-				vertical-align: baseline;
-			}
+    <head>
+        <script src="jquery-2.1.0.min.js"></script>
+        <script src="underscore-min.js"></script>
+        <script src="d3.v3.min.js"></script>
+        <style>
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
 
-			#viz {
-				position: absolute;
-				top: 0px;
-				right: 0px;
-				bottom: 0px;
-				left: 0px;
-				/*border: 1px solid black;*/
+            #viz {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                /*border: 1px solid black;*/
 
-				/*-moz-transform: scaleY(-1);
-			    -webkit-transform: scaleY(-1);
-			    -o-transform: scaleY(-1);
-			    transform: scaleY(-1);
-			    -ms-filter: flipv; 
-			    filter: flipv; */
-			}
-		</style>
-		<script>
-			var renderChart = function (data) {
-				var $viz = $("#viz");
-				var w = $viz.width() + 1;
-				var h = $viz.height() + 1;
+                /*-moz-transform: scaleY(-1);
+                -webkit-transform: scaleY(-1);
+                -o-transform: scaleY(-1);
+                transform: scaleY(-1);
+                -ms-filter: flipv; 
+                filter: flipv; */
+            }
+        </style>
+        <script>
+            var renderChart = function (data) {
+                var $viz = $("#viz");
+                var w = $viz.width() + 1;
+                var h = $viz.height() + 1;
 
-				var yLen = data.length;
-				var xLen = data[0].length;
+                var yLen = data.length;
+                var xLen = data[0].length;
 
-				var tileWidth = w / xLen;
-				var tileHeight = h / yLen;
+                var tileWidth = w / xLen;
+                var tileHeight = h / yLen;
 
-				data = [].concat.apply([], data);
+                data = [].concat.apply([], data);
 
-				var svg = d3.select("#viz svg");
+                var svg = d3.select("#viz svg");
 
-				if(svg.empty()) {
-					svg = d3.select("#viz").append("svg:svg")
-						.attr("class", "chart")
-						.attr("width", w)
-						.attr("height", h);
-				} else {
-					svg.attr("class", "chart")
-						.attr("width", w)
-						.attr("height", h);
-				}
+                if(svg.empty()) {
+                    svg = d3.select("#viz").append("svg:svg")
+                        .attr("class", "chart")
+                        .attr("width", w)
+                        .attr("height", h);
+                } else {
+                    svg.attr("class", "chart")
+                        .attr("width", w)
+                        .attr("height", h);
+                }
 
-				svg.selectAll("rect").remove();
+                svg.selectAll("rect").remove();
 
-				svg.selectAll("rect")
-					.data(data)
-					.enter()
-					.append("rect")
-						.attr("i", function (d, i) {
-							return i;
-						})
-						.attr("class", "cell")
-						.attr("x", function (d, i) {
-							return Math.floor(Math.random() * (2*w + w + 1)) -w;
-						})
-						.attr("y", function (d, i) {
-							return Math.floor(Math.random() * (2*h + w + 1)) -h;
-						})
-						.attr("rx", function (d, i) {
-							return Math.floor(tileWidth / 10);
-						})
-						.attr("ry", function (d, i) {
-							return Math.floor(tileWidth / 10);
-						})
-						.attr("width", function (d, i) {
-							return 0;
-						})
-						.attr("height", function (d, i) {
-							return 0;
-						})
-						.attr("fill", function (d, i) {
-							return "rgba(" + d.r + "," + d.g + "," + d.b + ",.7)";
-						})
-						.on("click", function (d, i) {
-							this.parentNode.appendChild(this);
-							var ii = i;
-							var isBig = d3.select(this).attr("isBig");
-							d3.select(this)
-								.transition()
-								.duration(500)
-								.attr("x", function (d, i) {
-									return isBig ? (ii % xLen) * tileWidth : 0;
-								})
-								.attr("y", function (d, i) {
-									return isBig ? Math.floor(ii / xLen) * tileHeight : 0;
-								})
-								.attr("height", function (d, i) {
-									return isBig ? tileHeight - 1 : h;
-								})
-								.attr("width", function (d, i) {
-									return isBig ? tileWidth - 1 : w;
-								})
-								.attr("fill", function (d, i) {
-									return isBig ? "rgba(" + d.r + "," + d.g + "," + d.b + ",.7)" : "rgba(" + d.r + "," + d.g + "," + d.b + ", 1)";
-								})
-								.attr("isBig", isBig ? null : true);
-						});;
+                svg.selectAll("rect")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                        .attr("i", function (d, i) {
+                            return i;
+                        })
+                        .attr("class", "cell")
+                        .attr("x", function (d, i) {
+                            return Math.floor(Math.random() * (2*w + w + 1)) -w;
+                        })
+                        .attr("y", function (d, i) {
+                            return Math.floor(Math.random() * (2*h + w + 1)) -h;
+                        })
+                        .attr("rx", function (d, i) {
+                            return Math.floor(tileWidth / 10);
+                        })
+                        .attr("ry", function (d, i) {
+                            return Math.floor(tileWidth / 10);
+                        })
+                        .attr("width", function (d, i) {
+                            return 0;
+                        })
+                        .attr("height", function (d, i) {
+                            return 0;
+                        })
+                        .attr("fill", function (d, i) {
+                            return "rgba(" + d.r + "," + d.g + "," + d.b + ",.7)";
+                        })
+                        .on("click", function (d, i) {
+                            this.parentNode.appendChild(this);
+                            var ii = i;
+                            var isBig = d3.select(this).attr("isBig");
+                            d3.select(this)
+                                .transition()
+                                .duration(500)
+                                .attr("x", function (d, i) {
+                                    return isBig ? (ii % xLen) * tileWidth : 0;
+                                })
+                                .attr("y", function (d, i) {
+                                    return isBig ? Math.floor(ii / xLen) * tileHeight : 0;
+                                })
+                                .attr("height", function (d, i) {
+                                    return isBig ? tileHeight - 1 : h;
+                                })
+                                .attr("width", function (d, i) {
+                                    return isBig ? tileWidth - 1 : w;
+                                })
+                                .attr("fill", function (d, i) {
+                                    return isBig ? "rgba(" + d.r + "," + d.g + "," + d.b + ",.7)" : "rgba(" + d.r + "," + d.g + "," + d.b + ", 1)";
+                                })
+                                .attr("isBig", isBig ? null : true);
+                        });;
 
-				svg.selectAll("rect")
-					.transition()
-					.duration(1500)
-					.attr("x", function (d, i) {
-						return (i % xLen) * tileWidth;
-					})
-					.attr("y", function (d, i) {
-						return Math.floor(i / xLen) * tileHeight;
-					})
-					.attr("width", function (d, i) {
-						return tileWidth - 1;
-					})
-					.attr("height", function (d, i) {
-						return tileHeight - 1;
-					});
-			}
+                svg.selectAll("rect")
+                    .transition()
+                    .duration(1500)
+                    .attr("x", function (d, i) {
+                        return (i % xLen) * tileWidth;
+                    })
+                    .attr("y", function (d, i) {
+                        return Math.floor(i / xLen) * tileHeight;
+                    })
+                    .attr("width", function (d, i) {
+                        return tileWidth - 1;
+                    })
+                    .attr("height", function (d, i) {
+                        return tileHeight - 1;
+                    });
+            }
 
-			$(document).ready(function () {
-				var $viz = $("#viz");
-				var w = Math.floor(Math.random() * 20 + 5);
-				var h = Math.floor(Math.random() * 9 + 5);
+            $(document).ready(function () {
+                var $viz = $("#viz");
+                var w = Math.floor(Math.random() * 20 + 5);
+                var h = Math.floor(Math.random() * 9 + 5);
 
-				var data = [];
-				for(var i = 0; i < h; i++) {
-					var temp = [];
-					for(var j = 0; j < w; j++) {
-						var rgb = {
-							r: Math.floor(Math.random() * 255),
-							g: Math.floor(Math.random() * 255),
-							b: Math.floor(Math.random() * 255)
-						}
-						temp.push(rgb);
-					}
-					data.push(temp);
-				}
+                var data = [];
+                for(var i = 0; i < h; i++) {
+                    var temp = [];
+                    for(var j = 0; j < w; j++) {
+                        var rgb = {
+                            r: Math.floor(Math.random() * 255),
+                            g: Math.floor(Math.random() * 255),
+                            b: Math.floor(Math.random() * 255)
+                        }
+                        temp.push(rgb);
+                    }
+                    data.push(temp);
+                }
 
-				renderChart(data);
-				var resizeTimeout = 0;
-				$(window).on("resize", function () {
-					clearInterval(resizeTimeout);
-					resizeTimeout = setTimeout(function() {
-						renderChart(data);	
-					}, 30);
-				});
-			});
-		</script>
-	</head>
-	<body>
-		<div id="viz"></div>
-	</body>
+                renderChart(data);
+                var resizeTimeout = 0;
+                $(window).on("resize", function () {
+                    clearInterval(resizeTimeout);
+                    resizeTimeout = setTimeout(function() {
+                        renderChart(data);  
+                    }, 30);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="viz"></div>
+    </body>
 </html>

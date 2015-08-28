@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Foo</title>
-		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-		<style type="text/css">
-			body, html {
-				font-family: Helvetica, Verdana, Arial, sans-serif;
-				height: 100%;
-				width: 100%;
-				overflow: hidden;
-			}
-			#block {
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				right: 0px;
-				bottom: 0px;
-				z-index: 1;
-			}
-			#one {
-				position: absolute;
-				display: none;
-				top: 0px;
-				left: 0px;
-				font-weight: bold;
-				font-size: 3em;
-				transition: all .15s;
-				z-index: 0;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="one">1</div>
-		<div id="block"></div>
-	</body>
-	<script type="text/javascript">
-		var $body;
-		var $debug;
-		var isMouseDown   = false;
-		var updateInterval = 0;
-		var t;
-		var left;
+    <head>
+        <title>Foo</title>
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <style type="text/css">
+            body, html {
+                font-family: Helvetica, Verdana, Arial, sans-serif;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+            #block {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                z-index: 1;
+            }
+            #one {
+                position: absolute;
+                display: none;
+                top: 0px;
+                left: 0px;
+                font-weight: bold;
+                font-size: 3em;
+                transition: all .15s;
+                z-index: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="one">1</div>
+        <div id="block"></div>
+    </body>
+    <script type="text/javascript">
+        var $body;
+        var $debug;
+        var isMouseDown   = false;
+        var updateInterval = 0;
+        var t;
+        var left;
 
-		var updatePosition = function (e) {
-			t  = (e.pageY - 20) + 'px';
-			left = (e.pageX - 10) + 'px';
-		};
+        var updatePosition = function (e) {
+            t  = (e.pageY - 20) + 'px';
+            left = (e.pageX - 10) + 'px';
+        };
 
-		var setupEvents = function () {
-			$body
-			.on('mousedown', function (e) {
-				isMouseDown = true;
-				$one.show();
-				updatePosition(e);
-			})
-			.on('mousemove', function (e) {
-				updatePosition(e);
-			})
-			.on('mouseup', function (e) {
-				isMouseDown = false;
-				$one.hide();
-			});
-		};
+        var setupEvents = function () {
+            $body
+            .on('mousedown', function (e) {
+                isMouseDown = true;
+                $one.show();
+                updatePosition(e);
+            })
+            .on('mousemove', function (e) {
+                updatePosition(e);
+            })
+            .on('mouseup', function (e) {
+                isMouseDown = false;
+                $one.hide();
+            });
+        };
 
-		var setupRender = function () {
-			updateInterval = setInterval(function () {
-				if (isMouseDown) {
-					$one.css('top', t).css('left', left);
-				}
-			}, 30);
-		}
+        var setupRender = function () {
+            updateInterval = setInterval(function () {
+                if (isMouseDown) {
+                    $one.css('top', t).css('left', left);
+                }
+            }, 30);
+        }
 
-		$(function () {
-			$body = $('body');
-			$one = $('#one');
+        $(function () {
+            $body = $('body');
+            $one = $('#one');
 
-			setupEvents();
-			setupRender();
-		});
-	</script>
+            setupEvents();
+            setupRender();
+        });
+    </script>
 </html>
