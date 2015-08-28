@@ -10,6 +10,8 @@ ga('send', 'pageview');
 var timBurkeCo = angular.module('timBurkeCo', ['ngRoute']);
 
 timBurkeCo.config(function($routeProvider) {
+	'use strict';
+
 	$routeProvider
 		.when('/', {
 			templateUrl: 'templates/home.html'
@@ -32,6 +34,8 @@ timBurkeCo.config(function($routeProvider) {
 });
 
 timBurkeCo.controller('navController', function($rootScope, $scope, $location) {
+	'use strict';
+
 	$rootScope.$on('$routeChangeSuccess', function() {
 		$scope.isRoot = $location.path() === '/';
 	});
@@ -42,5 +46,7 @@ timBurkeCo.controller('navController', function($rootScope, $scope, $location) {
 });
 
 $(document).ready(function() {
+	'use strict';
+
 	$('#dogelink').dogeify();
 });
