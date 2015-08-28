@@ -606,11 +606,11 @@ header {
         bottom: 10px;
         top: 35px; } }
   header .tim {
+    background: url(../images/headshot.png);
     background-color: white;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 160px;
-    background: url(../images/headshot.png);
     border-radius: 70px;
     border: 2px solid white;
     display: inline-block;
