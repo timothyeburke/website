@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jsbeautifier');
 
     grunt.initConfig({
         sass: {
@@ -12,6 +13,23 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'site/assets/style/style.css': 'site/assets/style/style.scss'
+                }
+            }
+        },
+        jsbeautifier: {
+            default: {
+                src: [
+                    'Gruntfile.js',
+                    'site/assets/scripts/*.js'
+                ]
+            },
+            verify: {
+                src: [
+                    'Gruntfile.js',
+                    'site/assets/scripts/*.js'
+                ],
+                options: {
+                    mode: 'VERIFY_ONLY'
                 }
             }
         },
