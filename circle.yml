@@ -13,5 +13,5 @@ dependencies:
 deployment:
   aws:
     branch: master
-      commands:
-        - aws s3 sync site/ s3://timburke.co/
+    commands:
+      - aws s3 sync site/ s3://timburke.co/
