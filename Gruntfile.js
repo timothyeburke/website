@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.initConfig({
         sass: {
@@ -11,6 +12,16 @@ module.exports = function(grunt) {
                     'site/assets/style/style.css': 'site/assets/style/style.scss'
                 }
             }
+        },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish')
+            },
+            all: [
+                'Gruntfile.js',
+                'site/assets/scripts/*.js'
+            ]
         }
     });
 

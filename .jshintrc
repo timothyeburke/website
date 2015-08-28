@@ -1,0 +1,13 @@
+{
+  "browser": true,
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "jquery": true,
+  "undef": true,
+  "globals": {
+    "angular": true,
+    "module": true,
+    "require": true
+  }
+}
