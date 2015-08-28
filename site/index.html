@@ -1,11 +1,11 @@
 <!doctype html>
-<!-- 
+<!--
 	Hi there! You're looking that the source code of my website, which means that you're probably
 	a nerdy person. Bravo to you!
 
 	This site is a really simple, single-page AngularJS application. I used Angular because I've
 	used it before, and it's really easy to set up a multi-route, multi-view application with
-	page and data templates. In this case, it's all just static HTML templates, but if I was 
+	page and data templates. In this case, it's all just static HTML templates, but if I was
 	feeling really fun I could make it all data templates and make the data JSON. Because JSON.
 -->
 <html ng-app="timBurkeCo">
@@ -27,11 +27,13 @@
 					<a href="#/projects" ng-class="{active:isActive('/projects')}">Projects</a>
 					<a href="#/blog" ng-class="{active:isActive('/blog')}">Blog</a>
 				</div>
-				<div class="tim"></div>
+				<a href="#/">
+					<div class="tim"></div>
+				</a>
 			</div>
 		</header>
 		<div class="content" ng-view>
-			
+
 		</div>
 		<footer>
 			<div class="center">
