@@ -4,5 +4,14 @@ dependencies:
   pre:
     - npm install
 
+  override:
+    - sudo pip install awscli
+
   post:
     - grunt sass
+
+deployment:
+  aws:
+    branch: master
+      commands:
+        - aws s3 sync site/ s3://timburke.co/
