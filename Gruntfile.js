@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jsbeautifier');
+    grunt.loadNpmTasks('grunt-traceur');
 
     grunt.initConfig({
         sass: {
@@ -42,6 +43,20 @@ module.exports = function(grunt) {
                 'Gruntfile.js',
                 'site/assets/scripts/*.js'
             ]
+        },
+        traceur: {
+            options: {
+                experimental: true,
+            },
+            custom: {
+                files: [{
+                    expand: true,
+                    cwd: 'site/assets/scripts',
+                    src: ['*.js.es6'],
+                    dest: 'site/assets/scripts',
+                    ext: '.js'
+                }]
+            }
         }
     });
 
