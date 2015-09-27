@@ -1,4 +1,4 @@
-angular.module('timBurkeCo').controller('navController', [
+angular.module('timBurkeCo').controller('NavController', [
     '$location',
     '$rootScope',
     '$scope',

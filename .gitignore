@@ -1,3 +1,4 @@
 .DS_Store
 node_modules
 site/assets/scripts/*.js
+site/assets/scripts/controllers/*.js

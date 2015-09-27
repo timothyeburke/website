@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 src: [
                     'Gruntfile.js',
                     'site/assets/scripts/**/*.js.es6',
-                    '!site/assets/scripts/lib/**.*'
+                    '!site/assets/scripts/libs/**.*'
                 ],
                 options: {
                     js: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 src: [
                     'Gruntfile.js',
                     'site/assets/scripts/**/*.js.es6',
-                    '!site/assets/scripts/lib/**.*'
+                    '!site/assets/scripts/libs/**.*'
                 ],
                 options: {
                     mode: 'VERIFY_ONLY',
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                 files: {
                     src: [
                         'site/assets/scripts/*.js.es6',
-                        '!site/assets/scripts/lib/**/*.js.es6'
+                        '!site/assets/scripts/libs/**/*.js.es6'
                     ]
                 }
             }
@@ -75,7 +75,10 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'site/assets/scripts',
-                    src: ['*.js.es6'],
+                    src: [
+                        '**/*.js.es6',
+                        '!libs/**.*'
+                    ],
                     dest: 'site/assets/scripts',
                     ext: '.js'
                 }]
@@ -86,12 +89,21 @@ module.exports = function(grunt) {
                 separator: ';\n'
             },
             dist: {
-                src: ['site/assets/scripts/app.js', 'site/assets/scripts/*.js'],
+                src: [
+                    'site/assets/scripts/libs/jquery.js',
+                    'site/assets/scripts/libs/**/*.js',
+                    'site/assets/scripts/google.js',
+                    'site/assets/scripts/app.js',
+                    'site/assets/scripts/**/*.js'
+                ],
                 dest: 'site/assets/scripts/build.js'
             }
         },
         clean: {
-            js: ['site/assets/scripts/*.js']
+            js: [
+                'site/assets/scripts/**/*.js',
+                '!site/assets/scripts/libs/**.*'
+            ]
         }
     });
 
