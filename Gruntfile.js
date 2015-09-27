@@ -23,16 +23,26 @@ module.exports = function(grunt) {
             default: {
                 src: [
                     'Gruntfile.js',
-                    'site/assets/scripts/*.js'
-                ]
+                    'site/assets/scripts/**/*.js.es6',
+                    '!site/assets/scripts/lib/**.*'
+                ],
+                options: {
+                    js: {
+                        fileTypes: ['.js.es6']
+                    }
+                }
             },
             verify: {
                 src: [
                     'Gruntfile.js',
-                    'site/assets/scripts/*.js'
+                    'site/assets/scripts/**/*.js.es6',
+                    '!site/assets/scripts/lib/**.*'
                 ],
                 options: {
-                    mode: 'VERIFY_ONLY'
+                    mode: 'VERIFY_ONLY',
+                    js: {
+                        fileTypes: ['.js.es6']
+                    }
                 }
             }
         },
@@ -50,7 +60,8 @@ module.exports = function(grunt) {
                 },
                 files: {
                     src: [
-                        'site/assets/scripts/*.js.es6'
+                        'site/assets/scripts/*.js.es6',
+                        '!site/assets/scripts/lib/**/*.js.es6'
                     ]
                 }
             }
