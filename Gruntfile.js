@@ -40,9 +40,18 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                'Gruntfile.js',
-                'site/assets/scripts/*.js'
-            ]
+                'Gruntfile.js'
+            ],
+            es6: {
+                options: {
+                    jshintrc: '.jshintrc.es6'
+                },
+                files: {
+                    src: [
+                        'site/assets/scripts/*.js.es6'
+                    ]
+                }
+            }
         },
         traceur: {
             options: {
@@ -60,5 +69,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass', 'jsbeautifier', 'jshint']);
+    grunt.registerTask('default', ['sass', 'jsbeautifier', 'jshint', 'traceur']);
 };

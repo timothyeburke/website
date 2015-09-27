@@ -22,11 +22,11 @@ timBurkeCo.config(($routeProvider) => {
 })
 
 timBurkeCo.controller('navController', ($rootScope, $scope, $location) => {
-    $rootScope.$on('$routeChangeSuccess', function() {
+    $rootScope.$on('$routeChangeSuccess', () => {
         $scope.isRoot = $location.path() === '/'
     })
     $scope.isRoot = $location.path() === '/'
-    $scope.isActive = function(route) {
+    $scope.isActive = (route) => {
         return route === $location.path()
     }
 })
