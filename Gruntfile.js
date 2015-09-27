@@ -23,8 +23,7 @@ module.exports = function(grunt) {
             default: {
                 src: [
                     'Gruntfile.js',
-                    'site/assets/scripts/**/*.js.es6',
-                    '!site/assets/scripts/libs/**.*'
+                    'site/assets/scripts/**/*.js.es6'
                 ],
                 options: {
                     js: {
@@ -35,8 +34,7 @@ module.exports = function(grunt) {
             verify: {
                 src: [
                     'Gruntfile.js',
-                    'site/assets/scripts/**/*.js.es6',
-                    '!site/assets/scripts/libs/**.*'
+                    'site/assets/scripts/**/*.js.es6'
                 ],
                 options: {
                     mode: 'VERIFY_ONLY',
@@ -60,8 +58,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     src: [
-                        'site/assets/scripts/*.js.es6',
-                        '!site/assets/scripts/libs/**/*.js.es6'
+                        'site/assets/scripts/*.js.es6'
                     ]
                 }
             }
@@ -76,8 +73,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'site/assets/scripts',
                     src: [
-                        '**/*.js.es6',
-                        '!libs/**.*'
+                        '**/*.js.es6'
                     ],
                     dest: 'site/assets/scripts',
                     ext: '.js'
@@ -90,10 +86,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [
-                    'site/assets/scripts/libs/jquery.js',
                     'node_modules/angular/angular.min.js',
                     'node_modules/angular-route/angular-route.min.js',
-                    'site/assets/scripts/libs/**/*.js',
                     'site/assets/scripts/google.js',
                     'site/assets/scripts/app.js',
                     'site/assets/scripts/**/*.js'
@@ -103,8 +97,7 @@ module.exports = function(grunt) {
         },
         clean: {
             js: [
-                'site/assets/scripts/**/*.js',
-                '!site/assets/scripts/libs/**.*'
+                'site/assets/scripts/**/*.js'
             ]
         }
     });
