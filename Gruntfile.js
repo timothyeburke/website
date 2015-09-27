@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jsbeautifier');
     grunt.loadNpmTasks('grunt-traceur');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.initConfig({
         sass: {
@@ -56,6 +58,7 @@ module.exports = function(grunt) {
         traceur: {
             options: {
                 experimental: true,
+                modules: 'inline'
             },
             custom: {
                 files: [{
@@ -66,8 +69,20 @@ module.exports = function(grunt) {
                     ext: '.js'
                 }]
             }
+        },
+        concat: {
+            options: {
+                separator: ';\n'
+            },
+            dist: {
+                src: ['site/assets/scripts/*.js'],
+                dest: 'site/assets/scripts/build.js'
+            }
+        },
+        clean: {
+            js: ['site/assets/scripts/*.js']
         }
     });
 
-    grunt.registerTask('default', ['sass', 'jsbeautifier', 'jshint', 'traceur']);
+    grunt.registerTask('default', ['clean', 'sass', 'jsbeautifier', 'jshint', 'traceur', 'concat']);
 };

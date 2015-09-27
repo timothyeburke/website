@@ -19,4 +19,6 @@ deployment:
   aws:
     branch: master
     commands:
+      - grunt traceur
+      - grunt concat
       - aws s3 sync site/ s3://timburke.co/
