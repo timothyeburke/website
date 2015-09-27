@@ -91,6 +91,8 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'site/assets/scripts/libs/jquery.js',
+                    'node_modules/angular/angular.min.js',
+                    'node_modules/angular-route/angular-route.min.js',
                     'site/assets/scripts/libs/**/*.js',
                     'site/assets/scripts/google.js',
                     'site/assets/scripts/app.js',

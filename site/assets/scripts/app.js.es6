@@ -26,7 +26,3 @@ angular.module('timBurkeCo', [
             })
     }
 ])
-
-$(document).ready(() => {
-    $('#dogelink').dogeify()
-})
