@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                 separator: ';\n'
             },
             dist: {
-                src: ['site/assets/scripts/*.js'],
+                src: ['site/assets/scripts/app.js', 'site/assets/scripts/*.js'],
                 dest: 'site/assets/scripts/build.js'
             }
         },
