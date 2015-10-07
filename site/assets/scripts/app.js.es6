@@ -1,8 +1,6 @@
 angular.module('timBurkeCo', [
     'ngRoute'
-]).config([
-    '$routeProvider',
-
+]).config(
     (
         $routeProvider
     ) => {
@@ -25,4 +23,4 @@ angular.module('timBurkeCo', [
                 templateUrl: 'templates/blog.html'
             })
     }
-])
+)
