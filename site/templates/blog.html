@@ -12,6 +12,45 @@
     </div>
 -->
     <div class="entry">
+        <h2>Joining Collections</h2>
+        <p>10/13/2015</p>
+        <p>
+            It's been a while since I posted. I'll be musing more soon. For now I wanted to talk about my latest favorite pet peeve. Consider the following code:
+        </p>
+        <pre>
+// Array of data from API
+const procedures = [n elements]
+
+// Array of data from protected API
+const patients = [n-ish elements]
+
+_.each(procedures, (procedure) => {
+    procedure.patient = _.find(patients, {id: procedure.patient_id})
+})</pre>
+        <p>
+            This looks innocent enough. At Kit Check, we have a general API that stores most of the data for the application, but some data, protected health information, must be stored separately, encrypted at rest, with more limited access requirements, and all that jazz. The UI must fetch and join the PHI data when necessary from separate servers. But there's a problem with this code.
+        </p>
+        <p>
+            Since there are roughly the same number of elements in both arrays, this is approximately a O(n<sup>2</sup>) function - or, for every element in procedures, at worst, we must search through every element in patients. If each array were 10 elements, you must perform 100 operations. We do this a lot all over our UI code. I've started slowly cleaning them up as I come across them.
+        </p>
+        <p>
+            Here's a better way:
+        </p>
+        <pre>
+const patientsObj = _.reduce(patients, (result, n) => {
+    result[n.id] = n
+    return result
+}, {})
+
+_.each(procedures, (procedure) => {
+    procedure.patient = patientsObj[procedure.patient_id]
+})</pre>
+        <p>
+            This yeilds the same result, but it does two linear passes, O(2n) or just O(n) or just twenty operations for 10 elements in each array. This is because fetching a keyed item from a hash table (JS objects are key/value hashes) is a constant time operation. The code is a tiny bit harder to read, but when those numbers of elements go up from the 10s to the 100s, the number of computations falls significantly, and improves performance of the browser on slower hardware.
+        </p>
+    </div>
+
+    <div class="entry">
         <h2>Linked Lists vs. Arrays</h2>
         <p>11/21/2014</p>
         <p>
@@ -24,7 +63,6 @@
             I are pleased.
         </p>
     </div>
-
 
     <div class="entry">
         <h2>Falsehoods programmers believe about time</h2>
@@ -152,7 +190,4 @@ $("#foo").find(".bar").show();</pre>
             In 7 years of using the jQuery library, had he never opened the un-minimized source and read through it? There's some magical stuff in there. There's also some pretty basic facade. The second one is faster because the id selector <span class="mono">$("#foo")</span> maps directly to the <span class="mono">document.getElementById()</span> method supported by every browser. The <span class="mono">find(".bar")</span> does something similar in browsers that support <span class="mono">document.getElementsByClassName()</span> and does a basic walk in browsers that do not *cough* IE *cough*. The compound selector <span class="mono">$("#foo bar")</span> forces jQuery to walk the entire DOM tree in order to find matching elements, which can be very slow, especially if done repeatedly. 
         </p>
     </div>
-
-    
-
 </div>
