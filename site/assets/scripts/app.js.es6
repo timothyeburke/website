@@ -1,9 +1,13 @@
 angular.module('timBurkeCo', [
-    'ngRoute'
+    'ngRoute',
+    'ngSanitize'
 ]).config(
     (
-        $routeProvider
+        $routeProvider,
+        BlogPostsResolverProvider
     ) => {
+        const blogPostsResolver = BlogPostsResolverProvider.$get
+
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/home.html'
@@ -20,7 +24,11 @@ angular.module('timBurkeCo', [
                 }
             })
             .when('/blog', {
-                templateUrl: 'templates/blog.html'
+                controller: 'BlogController',
+                templateUrl: 'templates/blog.html',
+                resolve: {
+                    posts: blogPostsResolver
+                }
             })
     }
 )

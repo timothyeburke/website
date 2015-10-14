@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-traceur');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.initConfig({
         sass: {
@@ -88,6 +89,8 @@ module.exports = function(grunt) {
                 src: [
                     'node_modules/angular/angular.min.js',
                     'node_modules/angular-route/angular-route.min.js',
+                    'node_modules/angular-sanitize/angular-sanitize.min.js',
+                    'node_modules/lodash/index.js',
                     'site/assets/scripts/google.js',
                     'site/assets/scripts/app.js',
                     'site/assets/scripts/**/*.js'
@@ -99,8 +102,18 @@ module.exports = function(grunt) {
             js: [
                 'site/assets/scripts/**/*.js'
             ]
+        },
+        uglify: {
+            my_target: {
+                options: {
+                    mangle: false
+                },
+                files: {
+                    'site/assets/scripts/build.min.js': ['site/assets/scripts/build.js']
+                }
+            }
         }
     });
 
-    grunt.registerTask('default', ['clean', 'sass', 'jsbeautifier', 'jshint', 'traceur', 'concat']);
+    grunt.registerTask('default', ['clean', 'sass', 'jsbeautifier', 'jshint', 'traceur', 'concat', 'uglify']);
 };
