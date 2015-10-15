@@ -1,11 +1,20 @@
 angular.module('timBurkeCo').controller('BlogController', (
+    $location,
     $rootScope,
     $sanitize,
     $scope,
-    posts
+    page
 ) => {
-    _.each(posts, (post) => {
+
+    _.each(page.items, (post) => {
         post.content = $sanitize(post.content)
     })
-    $scope.posts = posts
+
+    $scope.posts = page.items
+    $scope.next = page.nextPage
+    $scope.previous = page.previousPage
+
+    $scope.navigate = (page) => {
+        $location.url(`/blog/${page}`)
+    }
 })

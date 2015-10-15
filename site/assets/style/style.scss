@@ -281,6 +281,23 @@ header {
             border-bottom: 1px solid rgb(200, 200, 200);
             padding-bottom: 20px;
         }
+
+        .links {
+            &.bottom {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .next {
+                float: right;
+            }
+
+            .back {
+                float: left;
+            }
+        }
+
+        
     }
 }
 

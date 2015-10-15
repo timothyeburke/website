@@ -1,5 +1,11 @@
 angular.module('timBurkeCo').factory('BlogPostsResolver', (
-    BlogResource
+    $q,
+    $location,
+    $route,
+    BlogPostService
 ) => {
-    return BlogResource.listBlogPosts()
+    return BlogPostService.getPage($route.current.params.page).catch(() => {
+        $location.url('/blog')
+        return $q.reject()
+    })
 })

@@ -7,10 +7,16 @@ angular.module('timBurkeCo').factory('BlogResource', (
 
     function listBlogPosts() {
         const url = `${baseUrl}/${blogId}/posts/?${key}`
-        return $http.get(url).then((response) => response.data.items)
+        return $http.get(url).then((response) => response.data)
+    }
+
+    function listBlogPostsByPage(pageToken) {
+        const url = `${baseUrl}/${blogId}/posts/?${key}&pageToken=${pageToken}`
+        return $http.get(url).then((response) => response.data)
     }
 
     return {
-        listBlogPosts
+        listBlogPosts,
+        listBlogPostsByPage
     }
 })

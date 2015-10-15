@@ -23,11 +23,11 @@ angular.module('timBurkeCo', [
                     return params.page ? `templates/projects/${params.page}.html` : 'templates/projects/projects.html'
                 }
             })
-            .when('/blog', {
+            .when('/blog/:page?', {
                 controller: 'BlogController',
                 templateUrl: 'templates/blog.html',
                 resolve: {
-                    posts: blogPostsResolver
+                    page: blogPostsResolver
                 }
             })
     }
