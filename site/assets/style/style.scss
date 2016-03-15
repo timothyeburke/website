@@ -297,7 +297,24 @@ header {
             }
         }
 
-        
+        img {
+            max-width: 100%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+
+            @media (max-width: 480px) {
+                width: 100%;
+            }
+        }
+
+        a {
+            @media (max-width: 480px) {
+                word-wrap: break-word;
+            }
+        }
+
     }
 }
 
