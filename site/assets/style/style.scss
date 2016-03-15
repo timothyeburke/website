@@ -255,7 +255,15 @@ header {
     }
 
     .project {
+        img {
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
 
+            @media (max-width: 480px) {
+                width: 100%;
+            }
+        }
     }
 
     .work {
