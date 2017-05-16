@@ -1,9 +1,5 @@
 .DS_Store
 node_modules
-site/assets/scripts/*.js
-site/assets/scripts/controllers/*.js
-site/assets/scripts/resources/*.js
-site/assets/scripts/resolvers/*.js
-site/assets/scripts/services/*.js
-site/assets/style/*.css
-site/assets/style/*.css.map
+bower_components
+dist
+tmp
