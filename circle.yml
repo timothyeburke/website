@@ -13,5 +13,4 @@ deployment:
   aws:
     branch: master
     commands:
-      -
-      - aws s3 sync site/ s3://timburke.co/
+      - aws s3 sync dist/ s3://timburke.co/
