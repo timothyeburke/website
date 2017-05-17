@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - npm install -g ember-cli
+    - npm install -g bower
     - npm install
     - bower install
 
