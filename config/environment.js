@@ -1,11 +1,11 @@
-/* eslint-env node */
+/* jshint node: true */
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'website-ember',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

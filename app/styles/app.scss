@@ -266,12 +266,6 @@ header {
         }
     }
 
-    .work {
-        span {
-            text-decoration: underline;
-        }
-    }
-
     .blog {
         pre {
             background-color: white;
@@ -394,6 +388,10 @@ footer {
         background-color: rgb(0, 0, 0);
     }
 
+    .instagram:hover {
+        background-color: rgb(100, 45, 25);
+    }
+
 
     .doge {
         background-color: rgb(122, 148, 181);
@@ -435,4 +433,19 @@ footer {
             top: inherit;
         }
     }
+}
+
+table {
+    margin-top: 10px;
+    tr {
+        td {
+            padding-right: 10px;
+            vertical-align: top;
+
+            &:first-of-type {
+                font-style: italic;
+            }
+        }
+    }
+
 }
