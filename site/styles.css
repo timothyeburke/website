@@ -58,12 +58,13 @@ td {
 }
 
 .header {
-    background-color: #FFCC3A;
+    background-color: #003566;
     padding: 30px;
     text-align: center;
 }
 
 .header h1 {
+    color: #fff;
     font-size: 50px;
 }
 
