@@ -73,7 +73,7 @@ td {
     padding: 20px;
     position: absolute;
     right: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .footer a {
@@ -85,7 +85,7 @@ td {
     font-family: socials;
     font-size: 30px;
     font-style: normal;
-    margin: 10px;
+    margin: 20px;
 }
 
 .footer a:hover > .icon {
