@@ -1,0 +1,93 @@
+@font-face {
+    font-family: socials;
+    src: url(images/icons.woff);
+}
+
+html, body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+a, h1, h2 {
+    color: #000;
+}
+
+h1, h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding: 0 10px 0 0;
+}
+
+.container {
+    /* background-color: #eee; */
+    margin: 0 auto;
+    max-width: 768px;
+    min-height: calc(100vh - 130px);
+    min-width: 400px;
+    position: relative;
+}
+
+.content {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 0 100px 0;
+}
+
+.content h2 {
+    font-size: 30px;
+    padding: 30px 0 10px 0;
+}
+
+.content .dogs {
+    text-align: center;
+}
+
+.content .dogs img {
+    width: 100%;
+    max-width: 640px;
+}
+
+.header {
+    background-color: #FFCC3A;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.icon {
+    color: #ccc;
+    font-family: socials;
+    font-size: 30px;
+    font-style: normal;
+    margin: 10px;
+}
+
+.footer a:hover > .icon {
+    color: #000;
+}
