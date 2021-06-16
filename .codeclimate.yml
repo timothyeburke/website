@@ -1,4 +1,0 @@
-exclude_paths:
-    - site/touch/js/jquery-1.9.1.js
-    - site/ossim/jquery.js
-    - site/d3/d3.v3.js
