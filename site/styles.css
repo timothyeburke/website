@@ -60,6 +60,10 @@ td {
     font-size: 50px;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .footer {
     bottom: 0;
     left: 0;
