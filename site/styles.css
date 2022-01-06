@@ -85,6 +85,15 @@ td {
     margin: 20px;
 }
 
+.dogs {
+    margin: 0px auto;
+    max-width: 550px;
+}
+
+.dogs > img {
+    width: 100%;
+}
+
 .footer a:hover > .twitter {
     color: rgb(0, 172, 237);
 }
